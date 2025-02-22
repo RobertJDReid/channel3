@@ -1,8 +1,12 @@
-# channel3.groovy
+# channel3.groovy v0.1
 
 ![TV](TV.png)
 
 A Groovy script for [ImageJ/Fiji](https://imagej.net/software/fiji/) that automates channel-based deconvolution, Z-projection, local maxima detection, and binary mask generation on a multi-channel image. This script uses [Bio-Formats](https://www.openmicroscopy.org/bio-formats/) for file import and the [DeconvolutionLab2](https://github.com/Biocomputing-UTech/DeconvolutionLab2) plugin for deconvolution.
+
+The goal is identification of subcellular focus formation of fluorescently tagged proteins.
+This script identifies foci positions in the XY plane, and results are fed in to a Matlab
+script for Z positioning and reporting of distances.
 
 ---
 
@@ -32,11 +36,11 @@ A Groovy script for [ImageJ/Fiji](https://imagej.net/software/fiji/) that automa
 
 1. **ImageJ or Fiji**:  
    - [Fiji](https://imagej.net/software/fiji/) is recommended because it comes bundled with many scientific image processing plugins.
-2. **Groovy** (if running from a standalone environment).
 3. **Bio-Formats** plugin (already included in Fiji) for reading various image file formats (e.g., `.czi`, `.nd2`, etc.).
 4. **DeconvolutionLab2** plugin installed in ImageJ/Fiji.  
    - [Installation instructions](https://github.com/Biocomputing-UTech/DeconvolutionLab2/wiki/Install)
 5. **PSF Files**: You will need point spread function (PSF) images for each channel you intend to deconvolve.
+   - PSF files can be generated using the PSF Generator plugin from [__EPFL__](https://bigwww.epfl.ch/algorithms/psfgenerator/)
 
 ---
 
@@ -57,7 +61,7 @@ A Groovy script for [ImageJ/Fiji](https://imagej.net/software/fiji/) that automa
 
 1. **Launch Fiji/ImageJ**.
 2. **Open the Script**:  
-   - Go to **`Plugins` > `Scripts`** > locate and open `loop_decon_z_loc_bin.groovy`, or  
+   - Go to **`Plugins` > `Scripts`** > locate and open `channel3.groovy`, or  
    - Use **`File` > `Open...`** to open the `.groovy` file, or  
    - Open it in the Fiji Script Editor (in Fiji: **`File` > `New` > `Script`** and then open the file).
 3. **Run the Script**:  
@@ -123,7 +127,14 @@ Inside the chosen output folder, you should find:
     def algorithm = " -algorithm RL 15"
     ```
   - The Gaussian blur settings and threshold method can also be edited in the script if your data calls for different filters.
-- **Performance**: Deconvolution can be computationally intensive. For large images or higher iteration counts, be prepared for longer processing times.
+- **Performance**: Deconvolution is computationally intensive and requires a Fourier transform library.
+   The FFTW2 libraries available from EPFL can dramatically speed up the deconvolution step
+
+## TBD
+
+- User specified channel mapping
+- User specified control over deconvolution algorithm and iterations
+- automate calling of followup script for Z positioning
 
 ---
 
