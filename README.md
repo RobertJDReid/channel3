@@ -1,8 +1,8 @@
-# channel3.groovy v0.1
+# Channel3 v0.1
 
 ![TV](TV.png)
 
-A Groovy script for [ImageJ/Fiji](https://imagej.net/software/fiji/) that automates channel-based deconvolution, Z-projection, local maxima detection, and binary mask generation on a multi-channel image. This script uses [Bio-Formats](https://www.openmicroscopy.org/bio-formats/) for file import and the [DeconvolutionLab2](https://github.com/Biocomputing-UTech/DeconvolutionLab2) plugin for deconvolution.
+A [Groovy](https://groovy-lang.org/) script for [ImageJ/Fiji](https://imagej.net/software/fiji/) that automates channel-based deconvolution, Z-projection, local maxima detection, and binary mask generation on a multi-channel image. This script uses [Bio-Formats](https://www.openmicroscopy.org/bio-formats/) for file import and the [DeconvolutionLab2](https://github.com/Biocomputing-UTech/DeconvolutionLab2) plugin for deconvolution.
 
 The goal is identification of subcellular focus formation of fluorescently tagged proteins.
 This script identifies foci positions in the XY plane, and results are fed in to a Matlab
