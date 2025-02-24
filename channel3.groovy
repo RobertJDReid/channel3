@@ -1,3 +1,11 @@
+// ***************************************************************************************
+// *
+// *                                      Channel 3
+// *
+// *                                    Version 0.2
+// *
+// ***************************************************************************************
+
 import ij.IJ
 import ij.WindowManager as WM
 import ij.plugin.ZProjector
@@ -12,6 +20,7 @@ import ij.text.TextWindow
 #@ File (label="choose input file", style="file") filePath
 #@ File (label="choose folder with PSF files", style="directory") psfPath
 #@ File (label="choose output folder", style="directory") outputDir
+#@ Integer (label="Enter number of deconvolution interations", style="slider", min=1, max=15, stepSize=1) deconIter
 
 def BlChan = 3; // Blue channel number - will parameterize at some point
 
@@ -51,7 +60,7 @@ for (i in 1..3) {
     
     def image = " -image platform " + match
     def psf = " -psf file " + psfPath + "/" + psf_colors[i] + "_psf.tif"
-    def algorithm = " -algorithm RL 15"
+    def algorithm = " -algorithm RL " + deconIter
     def outputPath = " -path " + outputDir
     def outputFile = "channel" + i + "deconv"
     def outputFileString = " -out stack " + outputFile
@@ -100,7 +109,7 @@ for (i in 1..3) {
     
     def prominence = 3 * stats.stdDev
     IJ.run(imp, "Find Maxima...", "prominence=" + prominence + " strict exclude output=[Point Selection]");
-    
+    IJ.run("Set Measurements...", "centroid redirect=None decimal=3");
     IJ.run(imp, "Measure", "");
     def newFile2 = new File(outputDir, "pointsC${i}.csv")
     

@@ -133,7 +133,7 @@ Inside the chosen output folder, you should find:
 ## TBD
 
 - User specified channel mapping
-- User specified control over deconvolution algorithm and iterations
+- User specified control over deconvolution algorithm
 - automate calling of followup script for Z positioning
 
 ---
