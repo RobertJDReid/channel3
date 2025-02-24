@@ -1,4 +1,4 @@
-# Channel3 v0.1
+# Channel3 v0.2
 
 ![TV](TV.png)
 
