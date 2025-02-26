@@ -1,4 +1,4 @@
-# Channel3 v0.2
+# Channel3 v0.3
 
 ![TV](TV.png)
 
@@ -54,6 +54,7 @@ script for Z positioning and reporting of distances.
    - Alternatively put a copy of the file in the Fiji.app folder under __`Fiji` > `scripts` > `Plugins`__.
       - if there is no _Plugins_ folder make a new folder called 'Plugins'
       - note this is a different folder than __`Fiji` > `plugins`__.
+   - __`Channel_3`__ will now show up at the bottom of the plugins menu in __ImageJ/Fiji__
 
 3. **Ensure DeconvolutionLab2 is installed**  
    - Download the DeconvolutionLab2 `.jar` file and place it in __`Fiji` > `plugins`__ folder if you haven’t already.
@@ -63,18 +64,19 @@ script for Z positioning and reporting of distances.
 ## Usage
 
 1. **Launch Fiji/ImageJ**.
-2. **Open the Script**:  
-   - Go to **`Plugins` > `Scripts`** > locate and open `channel3.groovy`, or  
-   - Use **`File` > `Open...`** to open the `.groovy` file, or  
-   - Open it in the Fiji Script Editor (in Fiji: **`File` > `New` > `Script`** and then open the file).
-3. **Run the Script**:  
-   - Click the **`Run`** button (in the Script Editor) or choose **`Run`** from the menu in ImageJ.
+2. **Launch script from the Plugins menu**:  
+   - Go to **`Plugins` > `Scripts` > `channel_3`** at the bottom of the menu.
+3. **Run from the script editor**:  
+   - Open the Fiji Script Editor (in Fiji: **`File` > `New` > `Script`** or use
+     the `[` key shortcut. and then open the `channel_3.groovy` file).
+   - Click the **`Run`** button (in the Script Editor).
 
 When you run the script, it will prompt you for:
 
 1. **Input file** (`choose input file`): The multi-channel image to be processed.  
 2. **PSF folder** (`choose folder with PSF files`): The directory containing PSF `.tif` files for each channel (e.g., `red_psf.tif`, `yellow_psf.tif`, `blue_psf.tif`).  
 3. **Output folder** (`choose output folder`): Where the script will save all output files.
+4. __Iterations__ for the Richarson-Lucy deconvolution algorithm.
 
 ---
 
