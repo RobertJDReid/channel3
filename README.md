@@ -47,13 +47,16 @@ script for Z positioning and reporting of distances.
 ## Installation
 
 1. **Download the script**  
-   Save or copy the `loop_decon_z_loc_bin.groovy` file into a convenient location on your computer.
+   Save or copy the `channel_3.groovy` file into a convenient location on your computer.
 
-2. **(Optional) Place in Fiji Scripts folder**  
+2. **Place in Fiji Scripts folder**  
    - Open Fiji, go to **`Plugins` > `Install...`** and place the script into Fiji’s `scripts` folder, or simply store the `.groovy` file wherever you keep your scripts.
+   - Alternatively put a copy of the file in the Fiji.app folder under __`Fiji` > `scripts` > `Plugins`__.
+      - if there is no _Plugins_ folder make a new folder called 'Plugins'
+      - note this is a different folder than __`Fiji` > `plugins`__.
 
 3. **Ensure DeconvolutionLab2 is installed**  
-   - Download the DeconvolutionLab2 `.jar` file and place it in Fiji’s `plugins` folder if you haven’t already.
+   - Download the DeconvolutionLab2 `.jar` file and place it in __`Fiji` > `plugins`__ folder if you haven’t already.
 
 ---
 
