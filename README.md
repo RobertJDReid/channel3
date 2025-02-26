@@ -145,6 +145,6 @@ Inside the chosen output folder, you should find:
 
 ## License
 
-This script is provided under the [MIT License](./LICENSE) (or insert your preferred license here). Feel free to modify and distribute as needed.
+This script is provided under the [MIT License](./LICENSE). Feel free to modify and distribute as needed.
 
 ---
