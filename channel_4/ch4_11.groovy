@@ -1,3 +1,11 @@
+// ***************************************************************************************
+// *
+// *                                      Channel 4
+// *
+// *                                    Version 0.11
+// *
+// ***************************************************************************************
+
 import ij.IJ
 import ij.WindowManager as WM
 import ij.text.TextWindow
@@ -268,10 +276,13 @@ selectedNames.each { name ->
 
         // *********** Deconvolution ************
 
+        def currentPsf = new File(psfPath,"${psf_colors[i]}_psf.tif").getAbsolutePath()
         def image = " -image platform " + match
-        def psf = " -psf file " + psfPath + "/" + psf_colors[i] + "_psf.tif"
+        def psf = " -psf file " + currentPsf
+//        def psf = " -psf file " + psfPath + "/" + psf_colors[i] + "_psf.tif"
         def algorithm = " -algorithm RL " + deconIter
-        def outputPath = "" + outputDir + "/" + subfolderName // This typew of string catenation needs to start with a string
+        def outputPath = new File(outputDir, subfolderName).getAbsolutePath()
+//        def outputPath = "" + outputDir + "/" + subfolderName // This typew of string catenation needs to start with a string
         def outputPathParam = " -path " + outputPath
         def outputFile = "channel" + i + "deconv"
         def outputFileString = " -out stack " + outputFile
